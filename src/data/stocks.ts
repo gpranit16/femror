@@ -1,0 +1,177 @@
+export interface AssetHolding {
+  id: string;
+  name: string;
+  ticker: string;
+  category: string;
+  price: string;
+  change: string;
+  isPositive: boolean;
+  sparkline: number[];
+  metric1: string;
+  metric1Label: string;
+}
+
+export const stocksData: AssetHolding[] = [
+  {
+    id: 'hdfc-bank',
+    name: 'HDFC Bank',
+    ticker: 'HDFCBANK',
+    category: 'Banking / Large Cap',
+    price: '₹1,612.50',
+    change: '+1.56%',
+    isPositive: true,
+    sparkline: [40, 42, 41, 44, 43, 47, 49, 48, 52],
+    metric1: '₹12.2L Cr',
+    metric1Label: 'M-Cap',
+  },
+  {
+    id: 'sbi',
+    name: 'State Bank of India',
+    ticker: 'SBIN',
+    category: 'PSU Bank / Large Cap',
+    price: '₹785.40',
+    change: '+0.82%',
+    isPositive: true,
+    sparkline: [30, 31, 29, 32, 34, 33, 35, 36, 38],
+    metric1: '10.8x',
+    metric1Label: 'P/E Ratio',
+  },
+  {
+    id: 'maruti-suzuki',
+    name: 'Maruti Suzuki',
+    ticker: 'MARUTI',
+    category: 'Automotive / Large Cap',
+    price: '₹11,248.30',
+    change: '-1.06%',
+    isPositive: false,
+    sparkline: [55, 54, 56, 52, 53, 50, 49, 47, 46],
+    metric1: '28.4x',
+    metric1Label: 'P/E Ratio',
+  },
+  {
+    id: 'infosys',
+    name: 'Infosys Ltd',
+    ticker: 'INFY',
+    category: 'IT Services / Large Cap',
+    price: '₹1,842.10',
+    change: '+1.18%',
+    isPositive: true,
+    sparkline: [32, 33, 35, 34, 37, 39, 38, 41, 42],
+    metric1: '2.8%',
+    metric1Label: 'Div Yield',
+  },
+  {
+    id: 'tata-motors',
+    name: 'Tata Motors',
+    ticker: 'TATAMOTORS',
+    category: 'Automotive / EV',
+    price: '₹912.60',
+    change: '+2.14%',
+    isPositive: true,
+    sparkline: [20, 22, 21, 25, 27, 26, 29, 31, 33],
+    metric1: '₹3.3L Cr',
+    metric1Label: 'M-Cap',
+  },
+];
+
+export const mutualFundsData: AssetHolding[] = [
+  {
+    id: 'parag-parikh-flexi',
+    name: 'Parag Parikh Flexi Cap Fund',
+    ticker: 'DIRECT - GROWTH',
+    category: 'Flexi Cap · Very High Risk',
+    price: '₹84.62',
+    change: '+18.4% 1Y',
+    isPositive: true,
+    sparkline: [20, 24, 27, 30, 33, 36, 39, 42, 45],
+    metric1: '0.62%',
+    metric1Label: 'Expense Ratio',
+  },
+  {
+    id: 'mirae-asset-large-midcap',
+    name: 'Mirae Asset Large & Midcap',
+    ticker: 'DIRECT - GROWTH',
+    category: 'Large & Midcap · High Risk',
+    price: '₹142.18',
+    change: '+16.2% 1Y',
+    isPositive: true,
+    sparkline: [25, 27, 26, 30, 32, 34, 37, 39, 41],
+    metric1: '0.54%',
+    metric1Label: 'Expense Ratio',
+  },
+  {
+    id: 'quant-small-cap',
+    name: 'Quant Small Cap Fund',
+    ticker: 'DIRECT - GROWTH',
+    category: 'Small Cap · Very High Risk',
+    price: '₹268.40',
+    change: '+26.8% 1Y',
+    isPositive: true,
+    sparkline: [18, 22, 26, 24, 30, 35, 33, 40, 44],
+    metric1: '0.74%',
+    metric1Label: 'Expense Ratio',
+  },
+  {
+    id: 'uti-nifty50-index',
+    name: 'UTI Nifty 50 Index Fund',
+    ticker: 'DIRECT - GROWTH',
+    category: 'Index · Passive',
+    price: '₹192.50',
+    change: '+14.1% 1Y',
+    isPositive: true,
+    sparkline: [22, 24, 25, 28, 29, 31, 33, 35, 36],
+    metric1: '0.18%',
+    metric1Label: 'Expense Ratio',
+  },
+];
+
+export const etfsData: AssetHolding[] = [
+  {
+    id: 'nifty-bees',
+    name: 'Nippon India Nifty 50 BeES',
+    ticker: 'NIFTYBEES',
+    category: 'Index ETF',
+    price: '₹278.30',
+    change: '+0.74%',
+    isPositive: true,
+    sparkline: [30, 31, 32, 34, 33, 36, 37, 38, 40],
+    metric1: '0.04%',
+    metric1Label: 'Expense',
+  },
+  {
+    id: 'gold-bees',
+    name: 'Nippon India Gold BeES',
+    ticker: 'GOLDBEES',
+    category: 'Commodity ETF',
+    price: '₹68.45',
+    change: '+0.32%',
+    isPositive: true,
+    sparkline: [28, 29, 29, 31, 32, 32, 34, 35, 36],
+    metric1: '₹12,400 Cr',
+    metric1Label: 'AUM',
+  },
+  {
+    id: 'bank-bees',
+    name: 'Nippon India Bank BeES',
+    ticker: 'BANKBEES',
+    category: 'Sectoral ETF',
+    price: '₹532.10',
+    change: '+0.95%',
+    isPositive: true,
+    sparkline: [24, 25, 27, 28, 30, 31, 32, 35, 37],
+    metric1: '₹8,900 Cr',
+    metric1Label: 'AUM',
+  },
+  {
+    id: 'mon100',
+    name: 'Motilal Oswal Nasdaq 100 ETF',
+    ticker: 'MON100',
+    category: 'International ETF',
+    price: '₹188.75',
+    change: '+1.42%',
+    isPositive: true,
+    sparkline: [20, 22, 25, 27, 26, 29, 32, 34, 38],
+    metric1: '0.50%',
+    metric1Label: 'Expense',
+  },
+];

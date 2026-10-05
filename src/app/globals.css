@@ -1,26 +1,112 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --ink: #101713;
+    --forest: #0B2A20;
+    --forest-2: #12382B;
+    --forest-deep: #071D16;
+    --mineral: #E9EDE7;
+    --surface: #F1F3EE;
+    --surface-2: #E1E7E0;
+    --surface-3: #D8DFD7;
+    --border: #CBD4CD;
+    --border-subtle: #DDE4DC;
+    --border-dark: rgba(255, 255, 255, 0.12);
+    --border-dark-strong: rgba(255, 255, 255, 0.22);
+    --muted: #657169;
+    --muted-light: #8E9B92;
+    --mint: #7CFF9B;
+    --mint-soft: #C7F5CF;
+    --mint-dark: #0A7A3E;
+    --positive: #0A7A3E;
+    --negative: #C23B3B;
+    --warm: #D6C9A8;
+    --white: #F7F8F4;
+
+    --font-heading: var(--font-bricolage), system-ui, sans-serif;
+    --font-sans: var(--font-instrument), system-ui, sans-serif;
+    --font-mono: var(--font-ibm-plex-mono), ui-monospace, monospace;
+  }
+
+  * {
+    border-color: var(--border);
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: var(--surface);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    letter-spacing: -0.01em;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.03em;
+  }
+
+  .font-mono-data {
+    font-family: var(--font-mono);
+    font-feature-settings: "tnum" 1;
+    font-variant-numeric: tabular-nums;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Smooth subtle interactive micro-transitions */
+.trans-subtle {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Tabular number styling helper */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Clean hairline borders */
+.hairline-border {
+  border-width: 1px;
+  border-style: solid;
+}
+
+/* Keyframes for ticker & subtle indicators */
+@keyframes ticker-scroll {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+.animate-ticker {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 35s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.96); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2.5s ease-in-out infinite;
 }
